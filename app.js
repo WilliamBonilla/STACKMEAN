@@ -14,9 +14,12 @@ mongoose.connect('mongodb://localhost/personas', function(error){
       console.log('Conectado a MongoDB');
    }
 });
-var Cliente = new clienteJs(mongoose);
+var Cliente = clienteJs(mongoose);
 
 app.get('/', function(req, res){
+   res.sendfile('./public/index.html');
+});
+app.get('/listar', function(req, res){
    Cliente.find({}, function(error, clientes){
       if(error){
          res.send('Error.');

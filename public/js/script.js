@@ -1,8 +1,8 @@
 var application = angular.module('application',[]);
 
-application.controller('Clientes',function($scope){
+application.controller('Clientes',function($scope, $http){
 
-   $scope._id = "";
+   $scope._id =null;
    $scope.nombre = '';
    $scope.apellido = ''
    $scope.domicilio = '';
@@ -10,6 +10,21 @@ application.controller('Clientes',function($scope){
    $scope.email = '';
    $scope.clientes = [];
 
+   $scope.cargarClientes = function(){
+      $http({
+         method: 'GET', url: '/listar'
+      }).
+      success(function(data) {
+         if(typeof(data) == 'object'){
+            $scope.clientes = data;
+         }else{
+            alert('Error al intentar recuperar los clientes.');
+         }
+      }).
+      error(function() {
+         alert('Error al intentar recuperar los clientes.');
+      });
+   };
 
    //Función guardar cliente
    $scope.guardarCliente = function() {
@@ -30,7 +45,7 @@ application.controller('Clientes',function($scope){
             email: $scope.email
          };
       }
-      $scope.limpiarDatos();
+      //$scope.limpiarDatos();
    };
 
    //Función recuperar cliente
