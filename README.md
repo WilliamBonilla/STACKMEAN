@@ -1,7 +1,6 @@
 [![NPM](https://nodei.co/npm/mongodb.png?downloads=true&downloadRank=true)](https://nodei.co/npm/mongodb/)
 [![NPM](https://nodei.co/npm/express.png?downloads=true&downloadRank=true)](https://nodei.co/npm/express/)
-
-
+[![NPM](https://nodei.co/npm/angular.png?downloads=true&downloadRank=true)](https://nodei.co/npm/angular/)
 Desarrollo con STACK MEAN
 =========================
 
