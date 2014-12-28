@@ -17,6 +17,16 @@
          <br>
          <a class="btn btn-primary centrado" data-toggle="modal" href='#modal-id'>Agregar Cliente</a>
          <br>
+         <br>
+        
+        <div class="col-xs-4 col-xs-offset-4">    
+        <div class="right-inner-addon ">
+        <i class="glyphicon glyphicon-search"></i>
+        <input type="search" class="form-control" placeholder="Search"/>
+        </div>
+        </div>
+
+         <br>
          <div class="modal fade" id="modal-id">
            <div class="modal-dialog">
              <div class="modal-content">
@@ -80,15 +90,15 @@
                </tr>
             </thead>
             <tbody>
-               <tr ng-repeat="item in clientes">
+               <tr ng-repeat="item in clientes | filter:query | orderBy: nombre" >
                    <td> {{item.nombre}} </td>
                    <td> {{item.apellido}} </td>
                    <td> {{item.domicilio}} </td>
                    <td> {{item.telefono}} </td>
                    <td> {{item.email}} </td>
-                 <td> <a href="javascript:void(0);" class="btn btn-info" ng-click="recuperarCliente(item._id)"> Editar </a> </td>
+                 <td> <a class="btn btn-info" data-toggle="modal" href='#modal-id' ng-click="recuperarCliente(item._id)"> Editar </a> </td>
                 <td> <a href="javascript:void(0);" class="btn btn-danger" ng-click="eliminarCliente(item._id)"> Eliminar </a> </td>
-                 </tr>
+               </tr>
               </tbody>
            </table>
       </div>

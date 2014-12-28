@@ -28,45 +28,73 @@ application.controller('Clientes',function($scope, $http){
 
    //Función guardar cliente
    $scope.guardarCliente = function() {
-      if ($scope._id == null) {
-         $scope.clientes.push({
+      $http({
+         method: 'POST',
+         url: '/guardar',
+         params:{
             nombre: $scope.nombre,
             apellido: $scope.apellido,
             domicilio: $scope.domicilio,
             telefono: $scope.telefono,
-            email: $scope.email
-         }); 
-      } else {
-         $scope.clientes[$scope._id] = {
-            nombre: $scope.nombre,
-            apellido: $scope.apellido,
-            domicilio: $scope.domicilio,
-            telefono: $scope.telefono,
-            email: $scope.email
-         };
-      }
-      //$scope.limpiarDatos();
+            email: $scope.email,
+            _id: $scope.id
+         }
+      }).success(function(data){
+         if(typeof(data)=='object'){
+           // $scope.limpiarDatos();
+            $scope.cargarClientes();
+         }else{
+            alert('ERROR AL INTENTAR GUARDAR EL CLIENTE');
+         }
+      }).error(function(){
+         alert('ERROR AL INTENTAR GUARDAR EL CLIENTE');
+      });
    };
 
    //Función recuperar cliente
-   $scope.recuperarCliente = function(index) {
-      $scope._id = index;
-      $scope.nombre = $scope.clientes[index].nombre;
-      $scope.apellido = $scope.clientes[index].apellido;
-      $scope.domicilio = $scope.clientes[index].domicilio;
-      $scope.telefono = $scope.clientes[index].telefono;
-      $scope.email = $scope.clientes[index].email;
+   $scope.recuperarCliente = function(indice) {
+      $http({
+         method: 'GET',
+         url: '/recuperar',
+         params: {
+            _id: indice
+         }
+      }).success(function(data){
+         if(typeof(data)=='object'){
+            $scope._id = data._id;
+            $scope.nombre = data.nombre;
+            $scope.apellido = data.apellido;
+            $scope.domicilio = data.domicilio;
+            $scope.telefono = data.telefono;
+            $scope.email = data.email;
+         }else{
+            alert('ERROR AL INTENTAR RECUPERAR EL CLIENTE');
+         }
+      }).error(function(){
+            alert('ERROR AL INTENTAR RECUPERAR EL CLIENTE');
+      });
    };
 
    //Función eliminar cliente, recibe como parámetro el índice que tiene asignado el cliente
    $scope.eliminarCliente = function(indice) {
-      var clientes_actualizado = [];
-      for (var i = 0; i < $scope.clientes.length; i++) {
-         if (i != indice) {
-            clientes_actualizado.push($scope.clientes[i]);
+       $http({
+         method: 'POST',
+         url: '/eliminar',
+         params: {
+            _id: indice
          }
-      }
-      $scope.clientes = clientes_actualizado;
+      }).
+      success(function(data) {
+         if(data == 'Ok'){
+            $scope.limpiarDatos();
+            $scope.cargarClientes();
+         }else{
+            alert('Error al intentar eliminar el cliente.');
+         } 
+      }).
+      error(function() {
+         alert('Error al intentar eliminar el cliente.');
+      });
    };
 
    //Función que limpia los datos
