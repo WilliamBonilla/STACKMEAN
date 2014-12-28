@@ -24,6 +24,7 @@ application.controller('Clientes',function($scope, $http){
       error(function() {
          alert('Error al intentar recuperar los clientes.');
       });
+      $scope.limpiarDatos();
    };
 
    //Función guardar cliente
@@ -37,11 +38,11 @@ application.controller('Clientes',function($scope, $http){
             domicilio: $scope.domicilio,
             telefono: $scope.telefono,
             email: $scope.email,
-            _id: $scope.id
+            _id: $scope._id
          }
       }).success(function(data){
          if(typeof(data)=='object'){
-           // $scope.limpiarDatos();
+            $scope.limpiarDatos();
             $scope.cargarClientes();
          }else{
             alert('ERROR AL INTENTAR GUARDAR EL CLIENTE');
