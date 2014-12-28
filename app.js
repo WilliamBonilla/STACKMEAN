@@ -11,7 +11,8 @@ mongoose.connect('mongodb://localhost/personas', function(error){
    if(error){
       throw error; 
    }else{
-      console.log('Conectado a MongoDB');
+      terminal.colorize('%W').write('Conectado a MongoDB\n');
+      terminal.colorize('%N');
    }
 });
 var Cliente = clienteJs(mongoose);
