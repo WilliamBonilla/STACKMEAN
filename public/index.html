@@ -4,44 +4,65 @@
       <meta charset="utf-8" />
       <title> Clientes </title>
       <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet" />
+      <script src="js/jquery.js" type="text/javascript"></script>
       <script type="text/javascript" src="js/angular.min.js"></script>
       <script type="text/javascript" src="js/script.js"></script>
+      <script src="js/bootstrap.min.js" type="text/javascript"></script>
    </head>
    <body>
       <div class="container" ng-controller="Clientes">
-         <h1> Clientes </h1>
-         <form action="javascript:void(0);">
-            <div class="row">
-               <div class="span4">
-                  <label> Nombre </label>
-                  <input type="text" ng-model="nombre" />
+         <h1> DESARROLLO CON STACK MEAN </h1>
+         <a class="btn btn-primary" data-toggle="modal" href='#modal-id'>Agregar Cliente</a>
+         <div class="modal fade" id="modal-id">
+           <div class="modal-dialog">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                 <h4 class="modal-title">Registro de Clientes</h4>
                </div>
-               <div class="span4"> 
-                  <label> Apellido </label>
-                  <input type="text" ng-model="apellido" />
+               <div class="modal-body">
+                 
+                  <div class="form-group">
+                      <form action="">
+                        
+                           
+                        <label> Nombre: </label>
+                        <input type="text" class="form-control" ng-model="nombre" />
+                           
+                           
+                        <label> Apellido: </label>
+                        <input type="text" class="form-control" ng-model="apellido" />
+                          
+                           
+                        <label> Domicilio: </label>
+                        <input type="text" class="form-control" ng-model="domicilio" />
+                           
+                        
+                        
+                         <label> Teléfono: </label>
+                        <input type="text" class="form-control" ng-model="telefono" />
+                           
+                           
+                        <label> Email: </label>
+                        <input type="text" class="form-control" ng-model="email" />
+                           
+                        
+                        
+                        <br>
+                        <input type="submit" value="Guardar" class="btn btn-success" ng-click="guardarCliente()" />
+                        <input type="button" value="Limpiar" class="btn btn-danger" ng-click="limpiarDatos()" />
+                           
+                      </form>
+                    </div>
+                  </div>
+               
+               <div class="modal-footer">
+                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                </div>
-               <div class="span4">
-                  <label> Domicilio </label>
-                  <input type="text" ng-model="domicilio" />
-               </div>
-            </div>
-            <div class="row">
-               <div class="span4">
-                  <label> Teléfono </label>
-                  <input type="text" ng-model="telefono" />
-               </div>
-               <div class="span4">
-                  <label> Email </label>
-                  <input type="text" ng-model="email" />
-               </div> 
-            </div>
-            <div class="row">
-               <div class="span4">
-                  <input type="submit" value="Guardar" class="btn btn-success" ng-click="guardarCliente()" />
-                  <input type="button" value="Limpiar" class="btn btn-danger" ng-click="limpiarDatos()" />
-               </div>
-            </div>
-         </form>
+             </div><!-- /.modal-content -->
+           </div><!-- /.modal-dialog -->
+         </div><!-- /.modal -->
+
          <table class="table">
             <thead>
                <tr>
@@ -70,5 +91,5 @@
    </body>
   
    <!-- JavaScripts necesarios -->   
-
+   
 </html>
