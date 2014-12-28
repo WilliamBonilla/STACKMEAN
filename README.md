@@ -13,7 +13,7 @@ Instalación
 Cuando cumplas los pasos anteriores, accede a tu carpeta del proyecto y procede a descargar las dependencias 
 con el siguiente comando:
 
--- `npm install -d`
+`npm install -d`
 
 Luego ejecutamos el archivo app.js con el comando:
 
