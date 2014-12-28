@@ -28,24 +28,27 @@ application.controller('Clientes',function($scope, $http){
 
    //Función guardar cliente
    $scope.guardarCliente = function() {
-      if ($scope._id == null) {
-         $scope.clientes.push({
+      $http({
+         method: 'POST',
+         url: '/guardar',
+         params:{
             nombre: $scope.nombre,
             apellido: $scope.apellido,
             domicilio: $scope.domicilio,
             telefono: $scope.telefono,
-            email: $scope.email
-         }); 
-      } else {
-         $scope.clientes[$scope._id] = {
-            nombre: $scope.nombre,
-            apellido: $scope.apellido,
-            domicilio: $scope.domicilio,
-            telefono: $scope.telefono,
-            email: $scope.email
-         };
-      }
-      //$scope.limpiarDatos();
+            email: $scope.email,
+            _id: $scope.id
+         }
+      }).success(function(data){
+         if(typeof(data)=='object'){
+           // $scope.limpiarDatos();
+            $scope.cargarClientes();
+         }else{
+            alert('ERROR AL INTENTAR GUARDAR EL CLIENTE');
+         }
+      }).error(function(){
+         alert('ERROR AL INTENTAR GUARDAR EL CLIENTE');
+      });
    };
 
    //Función recuperar cliente
