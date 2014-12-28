@@ -37,7 +37,7 @@ application.controller('Clientes',function($scope, $http){
             domicilio: $scope.domicilio,
             telefono: $scope.telefono,
             email: $scope.email,
-            _id: $scope.id
+             _id: $scope._id
          }
       }).success(function(data){
          if(typeof(data)=='object'){
