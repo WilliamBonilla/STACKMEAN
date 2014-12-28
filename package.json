@@ -1,0 +1,9 @@
+{
+  "name": "Demo-Stack-MEAN-NinjaWebCorp",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "latest",
+    "mongodb": "^1.4.26",
+    "mongoose": "*"
+  }
+}
