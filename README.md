@@ -6,9 +6,13 @@ MongoDB, Express, AngularJS todo bajo la estructura de NodeJS.
 ##Developers##
 
 **Adriano Chiliseo** [---Página de GitHub](https://github.com/Chiliseo)
+
+Twitter:
 *@AdrianoChiliseo*
 
 **William Bonilla**  [---Página de GitHub](https://github.com/WilliamBonilla)
+
+Twitter:
 *@WillBonilla11*
 
 Instalación
