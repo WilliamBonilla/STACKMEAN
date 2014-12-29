@@ -3,8 +3,16 @@ Desarrollo con STACK MEAN
 
 MongoDB, Express, AngularJS todo bajo la estructura de NodeJS.
 
+##Developers##
+
+**Adriano Chiliseo** [---Página de GitHub](https://github.com/Chiliseo)
+*@AdrianoChiliseo*
+
+**William Bonilla**  [---Página de GitHub](https://github.com/WilliamBonilla)
+*@WillBonilla11*
+
 Instalación
------------
+----------- 
 
 [![NPM](https://nodei.co/npm/mongodb.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/mongodb/)
 [![NPM](https://nodei.co/npm/express.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/express/)
