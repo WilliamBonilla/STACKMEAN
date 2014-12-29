@@ -15,7 +15,7 @@ Twitter:
 Twitter:
 *@WillBonilla11*
 
-[](http://wababonillasw18.net76.net/img/newlogo.png)
+![](http://wababonillasw18.net76.net/img/newlogo.png)
 
 Instalación
 ----------- 
