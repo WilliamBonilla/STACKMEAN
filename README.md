@@ -24,9 +24,11 @@ Instalación
 
 [Página Oficial NodeJS](http://nodejs.org/download/)
 
--Para instalar la WebApp debes descargar en formato .zip el repositorio.
+* Para instalar la WebApp debes descargar en formato .zip el repositorio.
 
--Tener instalado NodeJS y NPM (Node Package Manager).
+* Tener instalado NodeJS y NPM (Node Package Manager).
+
+* Instalar MongoDB.
 
 Cuando cumplas los pasos anteriores, accede a tu carpeta del proyecto y procede a descargar las dependencias 
 con el siguiente comando:
